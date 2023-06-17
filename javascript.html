@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quote Filter</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <h1>Quote Filter</h1>
+  <input type="text" id="filterInput" placeholder="Enter filter text">
+  <ul id="quoteList"></ul>
+
+  <script>
+    $(document).ready(function() {
+      const apiUrl = 'https://dummyjson.com/quotes';
+
+      // Fetch quote data from the API
+      $.get(apiUrl)
+        .done(function(data) {
+          const quotes = JSON.parse(data);
+
+          // Display all quotes initially
+          displayQuotes(quotes);
+
+          // Add event listener for input field
+          $('#filterInput').on('input', function() {
+            const filterText = $(this).val().toLowerCase();
+            const filteredQuotes = filterQuotes(quotes, filterText);
+            displayQuotes(filteredQuotes);
+          });
+        })
+        .fail(function() {
+          // Display error message if API call fails
+          $('#quoteList').html('<li>Error fetching quotes. Please try again later.</li>');
+        });
+    });
+
+    // Display quotes in the list
+    function displayQuotes(quotes) {
+      const quoteList = $('#quoteList');
+      quoteList.empty();
+
+      for (const quote of quotes) {
+        const listItem = $('<li>').text(quote.text);
+        quoteList.append(listItem);
+      }
+    }
+
+    // Filter quotes based on the entered text
+    function filterQuotes(quotes, filterText) {
+      return quotes.filter(function(quote) {
+        return quote.text.toLowerCase().includes(filterText);
+      });
+    }
+  </script>
+</body>
+</html>
