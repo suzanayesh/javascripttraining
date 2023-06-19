@@ -1,0 +1,75 @@
+/* styles.css */
+
+body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: aqua;
+}
+h1 {
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top-color: rgb(39, 126, 198);
+  border-top-style:groove;
+  border-top-width: 5px;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #27c0e2;
+  border-radius: 5px;
+
+}
+
+th {
+  font-weight: bold;
+  border-radius: 5px;
+
+}
+
+button,
+input[type="submit"] {
+  padding: 8px 12px;
+  background-color: rgb(68, 206, 222);
+  color: white;
+  border: none;
+ border-radius: 5px;
+  cursor: pointer;
+}
+
+button {
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 5px;
+
+  border-color: rgb(0, 187, 255);
+  
+}
+
+h2 {
+  margin-top: 20px;
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("sport.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px;
+  text-align: center;
+}

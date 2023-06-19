@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" ng-app="EmployeeApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+    <link rel="stylesheet" type="text/css" href="upd.css"> 
+    <title>Employees App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div ng-controller="EmployeeController">
+        <header>
+            <h1>Welcome </h1> 
+    
+            <img src="emp1.png" alt="hi" width="100%">
+    <h1>Suzan Ayesh & Yahia Totah</h1>
+         </header>
+        <h2>Add Employee</h2>
+        <form ng-submit="saveEmployee()">
+            <input type="number" ng-model="employeeData.id" placeholder="ID" required>
+            <input type="text" ng-model="employeeData.firstName" placeholder="FirstName" required>
+            <input type="text" ng-model="employeeData.lastName" placeholder="LastName" required>
+            <input type="text" ng-model="employeeData.role" placeholder="Role" required>
+            <input type="submit" value="Save">
+        </form>
+        <h1>Employees</h1>
+        <button ng-click="getEmployee()">Get All Employees</button>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+            
+            <tr ng-repeat="employee in employees.data">
+                <td>{{employee.id}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.role}}</td>
+                <td>
+                    <button ng-click="editEmployee(employee.id)">Update</button>
+                    <button ng-click="deleteEmployee(employee.id)">Discard</button>
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+</body>
+</html>

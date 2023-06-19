@@ -1,0 +1,89 @@
+/* styles.css */
+
+body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    width: 200px; /* Adjust the width and height as needed */
+    height: 200px;
+    position: relative;
+    border: 1px solid #000; /* Optional: Add border styles */
+  }
+  
+  .container img {
+    position: absolute;
+    top: 0;
+    right: 100;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  table {
+    width: 70%;
+    border-collapse: collapse;
+    border-top-color: rgb(88, 147, 243);
+    border-top-style: groove;
+    border-top-width: 7px;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: center;
+    border-bottom: 3px solid #599fef;
+    border-radius: 5px;
+  }
+  
+  th {
+    font-weight: bold;
+  }
+  
+  button,
+  input[type="submit"] {
+    padding: 8px 12px;
+    background-color: rgb(97, 194, 235);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  button {
+    margin-right: 20px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 50%;
+    border-color: rgb(0, 98, 255);
+    border-radius: 5px;
+  }
+  
+  h2 {
+    margin-top: 30px;
+  }
+  
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("emp1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    text-align: center;
+  }
+  
